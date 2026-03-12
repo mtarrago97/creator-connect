@@ -30,7 +30,7 @@ const CountdownTimer = ({ endTime, compact = false }: CountdownTimerProps) => {
 
   if (compact) {
     return (
-      <span className="font-display font-semibold text-sm text-primary">
+      <span className="font-display font-semibold text-sm text-accent tabular-nums">
         {pad(timeLeft.hours)}:{pad(timeLeft.minutes)}:{pad(timeLeft.seconds)}
       </span>
     );
@@ -44,8 +44,8 @@ const CountdownTimer = ({ endTime, compact = false }: CountdownTimerProps) => {
         { val: timeLeft.seconds, label: "SEC" },
       ].map((unit) => (
         <div key={unit.label} className="flex flex-col items-center">
-          <div className="bg-secondary rounded-lg px-3 py-2 min-w-[48px] text-center">
-            <span className="font-display text-xl font-bold text-foreground">{pad(unit.val)}</span>
+          <div className="bg-secondary rounded-xl px-3 py-2 min-w-[48px] text-center">
+            <span className="font-display text-xl font-semibold text-foreground tabular-nums">{pad(unit.val)}</span>
           </div>
           <span className="text-[10px] text-muted-foreground mt-1 font-medium tracking-wider">{unit.label}</span>
         </div>
